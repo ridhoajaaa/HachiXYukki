@@ -16,6 +16,7 @@ speedtest-cli
 motor
 psutil
 git+https://github.com/python-telegram-bot/ptbcontrib.git
+git+https://github.com/pytgcalls/pytgcalls
 requests
 rich
 python-telegram-bot==13.11.0

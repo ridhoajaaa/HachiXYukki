@@ -10,6 +10,7 @@ from rich.console import Console
 from rich.table import Table
 from youtubesearchpython import VideosSearch
 from platform import python_version as pyt
+from platform import pytgcalls as py
 from pyrogram import __version__ as pyro
 from pytgcalls import __version__ as py
 
@@ -102,9 +103,9 @@ async def initiate_bot():
         await app.send_message(
             f"@demonszxx",
             f"""<b>HachiXYukki Music Started</b>\n\n
-            <b>Python:</b> `{pyt()}`
-            <b>Pyrogram:</b> `{pyro}`
-            <b>PyTgCalls:</b> `{py}`
+<b>Python:</b> `{pyt()}`
+<b>Pyrogram:</b> `{pyro}`
+<b>PyTgCalls:</b> `{py}`
             """
         )
     except Exception as e:

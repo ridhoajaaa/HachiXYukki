@@ -9,6 +9,9 @@ from pytgcalls import idle
 from rich.console import Console
 from rich.table import Table
 from youtubesearchpython import VideosSearch
+from platform import python_version as pyt
+from pyrogram import __version__ as pyro
+from pytgcalls import __version__ as py
 
 from config import (LOG_GROUP_ID, LOG_SESSION, STRING1, STRING2,
                     STRING3, STRING4, STRING5)
@@ -98,7 +101,11 @@ async def initiate_bot():
     try:
         await app.send_message(
             f"@demonszxx",
-            "<b>Congrats!! Music Bot has started successfully!</b>",
+            f"""<b>HachiXYukki Music Started</b>\n\n
+            <b>Python:</b> `{pyt()}`
+            <b>Pyrogram:</b> `{pyro}`
+            <b>PyTgCalls:</b> `{py}`
+            """
         )
     except Exception as e:
         print(

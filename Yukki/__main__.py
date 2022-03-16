@@ -10,7 +10,6 @@ from rich.console import Console
 from rich.table import Table
 from youtubesearchpython import VideosSearch
 from platform import python_version as pyt
-from platform import pytgcalls as py
 from pyrogram import __version__ as pyro
 from pytgcalls import __version__ as py
 

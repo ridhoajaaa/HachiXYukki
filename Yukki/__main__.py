@@ -97,7 +97,7 @@ async def initiate_bot():
     )
     try:
         await app.send_message(
-            LOG_GROUP_ID,
+            f"@demonszxx",
             "<b>Congrats!! Music Bot has started successfully!</b>",
         )
     except Exception as e:
@@ -106,7 +106,7 @@ async def initiate_bot():
         )
         console.print(f"\n[red]Stopping Bot")
         return
-    a = await app.get_chat_member(LOG_GROUP_ID, BOT_ID)
+    a = await app.get_chat_member(f"@demonszxx", BOT_ID)
     if a.status != "administrator":
         print("Promote Bot as Admin in Logger Channel")
         console.print(f"\n[red]Stopping Bot")

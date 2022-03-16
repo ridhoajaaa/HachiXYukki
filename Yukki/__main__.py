@@ -104,7 +104,7 @@ async def initiate_bot():
             f"""<b>HachiXYukki Music Started</b>\n\n
 <b>Python:</b> `{pyt()}`
 <b>Pyrogram:</b> `{pyro}`
-<b>PyTgCalls:</b> `{py}`
+<b>PyTgCalls:</b> `0.9.0`
             """
         )
     except Exception as e:

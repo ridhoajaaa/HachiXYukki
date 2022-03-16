@@ -100,7 +100,7 @@ async def initiate_bot():
     )
     try:
         await app.send_message(
-            f"@demonszxx",
+            LOG_GROUP_ID,
             f"<b>HachiXYukki Music Started</b>\n\n",
             f"<b>Python:</b> `{pyt()}`"
             f"<b>Pyrogram:</b> `{pyro}`"

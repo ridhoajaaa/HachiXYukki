@@ -51,7 +51,7 @@ async def start_stream_video(message, file, title, mystic):
         to_append = [title, user, duration]
         got_queue.append(to_append)
         final_output = await message.reply_text(
-                f"<b>💡 Track added to queue</b> » <code>{position}</code>\n\n🏷<b>Video: </b> [Given Video Via Telegram]({link})\n\n🎧<b>Request By: </b>{message.from_user.mention}",
+                f"<b>💡 Video added to queue</b> » <code>{position}</code>\n\n🏷<b>Video:</b> [Given Video Via Telegram]({link})\n🎧<b>Request By: </b>{message.from_user.mention}",
                 reply_markup=audio_markup2,
                 disable_web_page_preview=True,
             ),
@@ -60,7 +60,7 @@ async def start_stream_video(message, file, title, mystic):
     else:
         if not await join_video_stream(message.chat.id, file, 720):
             return await mystic.edit(
-                "Gagal Join Voice Chat, Pastikan OS Menyala."
+                "Failed to Join Voice Chat, Make Sure the OS Is On."
             )
         get_queue[message.chat.id] = []
         got_queue = get_queue.get(message.chat.id)
@@ -76,7 +76,7 @@ async def start_stream_video(message, file, title, mystic):
         await mystic.delete()
         cap = f"🎥<b>Play: </b>[Given Video Via Telegram]({link})\n🎧<b>Request By:</b> {message.from_user.mention}"
         final_output = await message.reply_photo(
-            photo="Utils/Telegram.JPEG",
+            photo="Utils/Video.JPEG",
             reply_markup=InlineKeyboardMarkup(buttons),
             caption=cap,
         )

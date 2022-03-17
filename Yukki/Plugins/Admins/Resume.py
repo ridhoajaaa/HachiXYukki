@@ -34,7 +34,7 @@ loop = asyncio.get_event_loop()
 
 
 @app.on_message(
-    filters.command(["resume", "resu", "pause", "paus"]) & filters.group
+    filters.command(["resume", "resu"]) & filters.group
 )
 @AdminRightsCheck
 @checker
@@ -65,7 +65,7 @@ async def resume_com(_, message: Message):
         await music_on(chat_id)
         await resume_stream(chat_id)
         await message.reply_text(
-            f"<b>▶️ Music playback resume by</b> {message.from_user.mention}!\n\n"
+            f"<b>▶️ Music playback resume by {message.from_user.mention}!</b>\n\n"
             f"× To pause music playing, can use » /pause commands.",
             parse_mode=ParseMode.HTML,
         )

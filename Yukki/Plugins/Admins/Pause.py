@@ -42,7 +42,7 @@ async def pause_admin(_, message: Message):
     await music_off(chat_id)
     await pause_stream(chat_id)
     await message.edit_text(
-        f"<b>⏸ Music playback paused by</b> {message.from_user.mention}!\n\n"
+        f"<b>⏸ Music playback paused by {message.from_user.mention}!</b>\n\n"
         f"× To resume music playing, can use » /resume commands.",
         parse_mode=ParseMode.HTML,
     )

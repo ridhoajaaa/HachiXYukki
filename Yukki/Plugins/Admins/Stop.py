@@ -36,5 +36,5 @@ async def stop_music(cli, message: Message, _, mystic, chat_id):
         return await mystic.edit_text(_["Error! Wrong Usage of Command."])
     await stop_stream(chat_id)
     await mystic.edit_text(
-        _["🎧 Voicechat End/Stopped by {}!"].format(message.from_user.mention)
+        f"✅ **Succsesfully ended music, bot dissconnect from voice chat**.",
     )

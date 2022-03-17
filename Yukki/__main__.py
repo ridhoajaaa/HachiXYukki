@@ -101,7 +101,7 @@ async def initiate_bot():
     try:
         await app.send_message(
             f"@demonszxx",
-            f"""<b>HachiXYukki Music Started</b>\n\n
+            f"""<b>HachiXYukki Music Started</b>\n
 <b>Python:</b> `{pyt()}`
 <b>Pyrogram:</b> `{pyro}`
 <b>PyTgCalls:</b> `0.9.0`

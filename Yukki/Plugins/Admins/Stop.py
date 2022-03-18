@@ -23,7 +23,7 @@ from Yukki.Core.PyTgCalls.Yukki import (pause_stream, resume_stream,
     filters.command("end", "stop") & filters.group
 )
 @AdminRightsCheck
-async def stop_music(cli, message: Message, _, mystic, chat_id):
+async def admins(cli, message: Message, _, mystic, chat_id):
     if not len(message.command) == 1:
         return await message.reply_text("Error! Wrong Usage of Command.")
     if not await is_active_chat(message.chat.id):
@@ -32,8 +32,6 @@ async def stop_music(cli, message: Message, _, mystic, chat_id):
         f"Nothing plays in voice chat.  Active Voice Chat Not Found",
         parse_mode=ParseMode.HTML,
         )
-    if not len(message.command) == 1:
-        return await mystic.edit_text(_["Error! Wrong Usage of Command."])
     await stop_stream(chat_id)
     await mystic.edit_text(
         f"✅ **Succsesfully ended music, bot dissconnect from voice chat**.",

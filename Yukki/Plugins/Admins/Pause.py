@@ -23,7 +23,7 @@ from Yukki.Decorators.admins import AdminRightsCheck
 )
 @AdminRightsCheck
 @checker
-async def pause_admin(_, message: Message):
+async def admins(_, message: Message):
     global get_queue
     if not len(message.command) == 1:
         return await message.reply_text("Error! Wrong Usage of Command.")
@@ -34,8 +34,6 @@ async def pause_admin(_, message: Message):
         parse_mode=ParseMode.HTML,
         )
     chat_id = message.chat.id
-    if not len(message.command) == 1:
-        return await message.edit_text("Error! Wrong Usage of Command.")
     if message.command[0][1] == "a":
         if not await is_music_playing(chat_id):
             return await message.edit_text("Music is already Paused.")

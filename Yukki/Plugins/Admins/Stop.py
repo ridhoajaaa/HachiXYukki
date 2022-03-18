@@ -22,7 +22,7 @@ from Yukki.Core.PyTgCalls.Yukki import (pause_stream, resume_stream,
     filters.command("end", "stop") & filters.group
 )
 @AdminRightsCheck
-async def admins(cli, message: Message, _, mystic, chat_id):
+async def stop(cli, message: Message, _, mystic, chat_id):
     if not len(message.command) == 1:
         return await message.reply_text("Error! Wrong Usage of Command.")
     if not await is_active_chat(message.chat.id):

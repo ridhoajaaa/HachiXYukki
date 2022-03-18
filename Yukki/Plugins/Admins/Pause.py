@@ -23,7 +23,7 @@ from Yukki.Decorators.admins import AdminRightsCheck
 )
 @AdminRightsCheck
 @checker
-async def admins(_, message: Message):
+async def pause(_, message: Message):
     global get_queue
     if not len(message.command) == 1:
         return await message.reply_text("Error! Wrong Usage of Command.")

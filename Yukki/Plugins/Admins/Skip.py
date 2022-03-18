@@ -60,7 +60,7 @@ __HELP__ = """
 )
 @AdminRightsCheck
 @checker
-async def admins(_, message: Message):
+async def skip(_, message: Message):
     global get_queue
     if not len(message.command) == 1:
         return await message.reply_text("Error! Wrong Usage of Command.")

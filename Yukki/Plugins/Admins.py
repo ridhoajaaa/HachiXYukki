@@ -73,10 +73,10 @@ async def admins(_, message: Message):
     chat_id = message.chat.id
     if message.command[0][1] == "a":
         if not await is_music_playing(chat_id):
-            return await message.edit_text("Music is already Paused.")
+            return await message.reply_text("Music is already Paused.")
         await music_off(chat_id)
         await pause_stream(chat_id)
-        await message.edit_text(
+        await message.reply_text(
             f"<b>⏸ Music playback paused by {message.from_user.mention}!</b>\n\n"
             f"× To resume music playing, can use » /resume commands.",
             parse_mode=ParseMode.HTML,

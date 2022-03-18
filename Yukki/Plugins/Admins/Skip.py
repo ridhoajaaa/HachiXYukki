@@ -55,7 +55,7 @@ __HELP__ = """
 
 
 @app.on_message(
-    filters.command(["pause", "skip", "resume", "stop", "end", "paus", "sk", "resu", "endtod"])
+    filters.command(["skip"])
     & filters.group
 )
 @AdminRightsCheck
@@ -71,41 +71,6 @@ async def admins(_, message: Message):
         parse_mode=ParseMode.HTML,
         )
     chat_id = message.chat.id
-    if message.command[0][1] == "a":
-        if not await is_music_playing(chat_id):
-            return await message.edit_text("Music is already Paused.")
-        await music_off(chat_id)
-        await pause_stream(chat_id)
-        await message.edit_text(
-        f"<b>⏸ Music playback paused by {message.from_user.mention}!</b>\n\n"
-        f"× To resume music playing, can use » /resume commands.",
-        parse_mode=ParseMode.HTML,
-        )
-    if message.command[0][1] == "e":
-        if await is_music_playing(message.chat.id):
-            return await message.reply_text("Music Sudah Terputar.")
-        await music_on(chat_id)
-        await resume_stream(chat_id)
-        await message.reply_text(
-            f"<b>▶️ Music playback resume by {message.from_user.mention}!</b>\n\n"
-            f"× To pause music playing, can use » /pause commands.",
-            parse_mode=ParseMode.HTML,
-        )
-    if message.command[0][1] == "t" or message.command[0][1] == "n":
-        if message.chat.id not in db_mem:
-            db_mem[message.chat.id] = {}
-        wtfbro = db_mem[message.chat.id]
-        wtfbro["live_check"] = False
-        try:
-            Queues.clear(message.chat.id)
-        except QueueEmpty:
-            pass
-        await remove_active_chat(chat_id)
-        await remove_active_video_chat(chat_id)
-        await stop_stream(chat_id)
-        await message.reply_text(
-            f"✅ **Succsesfully ended music, bot dissconnect from voice chat**.",
-        )
     if message.command[0][1] == "k":
         if message.chat.id not in db_mem:
             db_mem[message.chat.id] = {}

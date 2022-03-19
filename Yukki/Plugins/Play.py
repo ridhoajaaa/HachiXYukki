@@ -35,7 +35,7 @@ loop = asyncio.get_event_loop()
 CMD_PREFIX = "/", ".", "!", "?", "*"
 
 @app.on_message(
-    filters.command(["play", "p", "pl", f"play@{BOT_USERNAME}"], prefixes=CMD_PREFIX) & filters.group
+    filters.command("play", prefixes=CMD_PREFIX) & filters.group
 )
 @checker
 @logging

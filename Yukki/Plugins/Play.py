@@ -8,7 +8,7 @@ from youtube_search import YoutubeSearch
 
 import Yukki
 from Yukki import (BOT_USERNAME, DURATION_LIMIT, DURATION_LIMIT_MIN,
-                   MUSIC_BOT_NAME, app, db_mem)
+                   MUSIC_BOT_NAME, SUDOERS, app, db_mem)
 from Yukki.Core.PyTgCalls.Converter import convert
 from Yukki.Core.PyTgCalls.Downloader import download
 from Yukki.Core.PyTgCalls.Tgdownloader import telegram_download
@@ -35,7 +35,7 @@ loop = asyncio.get_event_loop()
 CMD_PREFIX = "/", ".", "!", "?", "*"
 
 @app.on_message(
-    filters.command("play", prefixes=CMD_PREFIX) & filters.group
+    filters.command("play", prefixes=CMD_PREFIX) & filters.group & SUDOERS
 )
 @checker
 @logging

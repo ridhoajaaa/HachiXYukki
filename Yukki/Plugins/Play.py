@@ -33,7 +33,7 @@ from Yukki.Utilities.youtube import (get_yt_info_id, get_yt_info_query,
 loop = asyncio.get_event_loop()
 
 @app.on_message(
-    filters.command(["play", "p", "pl", f"play@{BOT_USERNAME}"]) & filters.group
+    filters.command(["play", "p", "pl", f"play@{BOT_USERNAME}"], prefixes=".") & filters.group
 )
 @checker
 @logging

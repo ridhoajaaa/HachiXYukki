@@ -191,12 +191,6 @@ def primary_markup(videoid, user_id, current_time, total_time):
         db_mem[videoid] = {}
     db_mem[videoid]["check"] = 2
     buttons = [
-         [
-            InlineKeyboardButton(
-                text=f"{total_time}  ━━●─────  {current_time}",
-                callback_data=f"timer_checkup_markup {videoid}|{user_id}",
-            )
-        ],
         [
             InlineKeyboardButton(
                 text="• Menu", callback_data=f"other {videoid}|{user_id}"
@@ -209,12 +203,6 @@ def primary_markup(videoid, user_id, current_time, total_time):
 
 def timer_markup(videoid, user_id, current_time, total_time):
     buttons = [
-        [
-            InlineKeyboardButton(
-                text=f"{total_time}  ━━●─────  {current_time}",
-                callback_data=f"timer_checkup_markup {videoid}|{user_id}",
-            )
-        ],
         [
             InlineKeyboardButton(
                 text="• Menu", callback_data=f"other {videoid}|{user_id}"

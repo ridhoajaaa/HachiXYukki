@@ -43,7 +43,6 @@ boottime = time.time()
 
 ### Clients
 app = app
-CMD_PREFIX = CMD_PREFIX
 ASS_CLI_1 = ASS_CLI_1
 ASS_CLI_2 = ASS_CLI_2
 ASS_CLI_3 = ASS_CLI_3
@@ -277,3 +276,5 @@ Apple = AppleAPI()
 Resso = RessoAPI()
 SoundCloud = SoundAPI()
 Telegram = TeleAPI()
+
+CMD_PREFIX = CMD_PREFIX

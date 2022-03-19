@@ -154,7 +154,7 @@ async def start_stream_audio(
         await mystic.delete()
         cap = f"<b>🏷️ Name: </b>[Given Audio Via Telegram]({link})\n🎧 <b>Request By:</b> {message.from_user.mention}"
         final_output = await message.reply_photo(
-            photo="Utils/Audio.JPEG",
+            photo="Utils/Audio.jpeg",
             reply_markup=InlineKeyboardMarkup(buttons),
             caption=cap,
         )

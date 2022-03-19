@@ -76,7 +76,7 @@ async def start_stream_video(message, file, title, mystic):
         await mystic.delete()
         cap = f"🎥<b>Play: </b>[Given Video Via Telegram]({link})\n🎧<b>Request By:</b> {message.from_user.mention}"
         final_output = await message.reply_photo(
-            photo="Utils/Video.JPEG",
+            photo="Utils/Video.jpeg",
             reply_markup=InlineKeyboardMarkup(buttons),
             caption=cap,
         )

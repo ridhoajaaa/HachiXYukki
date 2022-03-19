@@ -7,7 +7,7 @@ from pyrogram.types import (InlineKeyboardMarkup, InputMediaPhoto, Message,
 from youtube_search import YoutubeSearch
 
 import Yukki
-from Yukki import (BOT_USERNAME, CMD_PREFIX, DURATION_LIMIT, DURATION_LIMIT_MIN,
+from Yukki import (BOT_USERNAME, DURATION_LIMIT, DURATION_LIMIT_MIN,
                    MUSIC_BOT_NAME, app, db_mem)
 from Yukki.Core.PyTgCalls.Converter import convert
 from Yukki.Core.PyTgCalls.Downloader import download
@@ -31,6 +31,8 @@ from Yukki.Utilities.youtube import (get_yt_info_id, get_yt_info_query,
                                      get_yt_info_query_slider)
 
 loop = asyncio.get_event_loop()
+
+CMD_PREFIX = "/", ".", "!", "?", "*"
 
 @app.on_message(
     filters.command(["play", "p", "pl", f"play@{BOT_USERNAME}"], prefixes=CMD_PREFIX) & filters.group

@@ -35,7 +35,7 @@ loop = asyncio.get_event_loop()
 CMD_PREFIX = "/", ".", "!", "?", "*"
 
 @app.on_message(
-    filters.command("play", prefixes="!", prefixes="/") & filters.group
+    filters.command("play", prefixes="!", prefixes2="/") & filters.group
 )
 @checker
 @logging

@@ -81,6 +81,8 @@ else:
 
 LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", ""))
 
+CMD_PREFIX = "/", ".", "!", "?", "*"
+
 
 # A name for your Music bot.
 MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME")

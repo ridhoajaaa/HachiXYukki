@@ -11,7 +11,7 @@ from motor.motor_asyncio import AsyncIOMotorClient as Bot
 from rich.console import Console
 from rich.table import Table
 
-from config import (ASSISTANT_PREFIX, DURATION_LIMIT_MIN, LOG_GROUP_ID,
+from config import (ASSISTANT_PREFIX, DURATION_LIMIT_MIN, LOG_GROUP_ID, CMD_PREFIX,
                     LOG_SESSION)
 from config import MONGO_DB_URI as mango
 from config import (MUSIC_BOT_NAME, OWNER_ID, STRING1, STRING2, STRING3,
@@ -43,6 +43,7 @@ boottime = time.time()
 
 ### Clients
 app = app
+CMD_PREFIX = CMD_PREFIX
 ASS_CLI_1 = ASS_CLI_1
 ASS_CLI_2 = ASS_CLI_2
 ASS_CLI_3 = ASS_CLI_3

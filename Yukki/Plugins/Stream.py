@@ -181,7 +181,6 @@ async def Videos_Stream(_, CallbackQuery):
             f"**Duration Limit Exceeded**\n\n**Allowed Duration: **{DURATION_LIMIT_MIN} minute(s)\n**Received Duration:** {duration_min} minute(s)"
         )
     await CallbackQuery.answer(f"Processing:- {title[:20]}", show_alert=True)
-    theme = await check_theme(chat_id)
     chat_title = await specialfont_to_normal(chat_title)
     status = "VID PLAYING"
     thumb = await gen_thumb(videoid, status)

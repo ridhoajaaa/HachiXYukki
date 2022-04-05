@@ -261,7 +261,7 @@ async def usage_dynos(client, message):
     text = f"""
 **DYNO MUSIC USAGE:**
 
-**Usage:**
+**Usage** Of `{HEROKU_APP_NAME}`**:**
 Total Usage: `{AppHours}`**h**  `{AppMinutes}`**m** **|** [`{AppPercentage}`**%**]
 
 **Remaining Quota:**

@@ -154,7 +154,7 @@ async def activevc(_, message: Message):
         )
 
 
-@app.on_message(filters.command("activevideo") & filters.user(SUDOERS))
+@app.on_message(filters.command("activevc") & filters.user(SUDOERS))
 async def activevi_(_, message: Message):
     served_chats = []
     try:
@@ -179,7 +179,7 @@ async def activevi_(_, message: Message):
             text += f"<b>{j + 1}. {title}</b> [`{x}`]\n"
         j += 1
     if not text:
-        await message.reply_text("No Active Voice Chats")
+        await message.reply_text("No Active Video Chats")
     else:
         await message.reply_text(
             f"**Active Video Calls:-**\n\n{text}",

@@ -155,7 +155,7 @@ async def activevc(_, message: Message):
 
 
 @app.on_message(filters.command("activevc") & filters.user(SUDOERS))
-async def activevi_(_, message: Message):
+async def activevc(_, message: Message):
     served_chats = []
     try:
         chats = await get_active_video_chats()

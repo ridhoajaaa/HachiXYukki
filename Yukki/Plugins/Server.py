@@ -259,13 +259,13 @@ async def usage_dynos(client, message):
     AppMinutes = math.floor(AppQuotaUsed % 60)
     await asyncio.sleep(1.5)
     text = f"""
-**DYNO MUSIC USAGE:**
+**DYNO {HEROKU_APP_NAME}:**
 
-**Usage** Of** `{HEROKU_APP_NAME}`**:**
-Total Usage: `{AppHours}`**h**  `{AppMinutes}`**m** **|** [`{AppPercentage}`**%**]
+Usage:
+**Total Usage:** `{AppHours}`**h**  `{AppMinutes}`**m** **|** [`{AppPercentage}`**%**]
 
-**Remaining Quota:**
-Total Left: `{hours}`**h**  `{minutes}`**m** **|** [`{percentage}`**%**]
+Remaining Quota:
+**Total Left:** `{hours}`**h**  `{minutes}`**m** **|** [`{percentage}`**%**]
 
 **{day} Days Left**
 """
